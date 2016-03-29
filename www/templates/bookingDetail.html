@@ -1,0 +1,222 @@
+<ion-view title="Booking Detail">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+      <div class="col-sm-12 col-xs-12">
+        <!--   <button ng-click="toggleModal(2)" class="btn btn-default">Booking</button>  -->
+
+        <div style="margin-top:2%;border:1px solid #ccc;padding:0px;" class="col-sm-12 col-xs-12">
+          <a ui-sref="bookinglist">  <div style="margin-left:5px;margin-bottom:5px;margin-top:5px;min-height:50px;background:#f1f1f1;padding-top:10px;padding-bottom:10px;text-align:center;" class="col-sm-4 col-xs-4">
+            <i style="font-size:25px;" class="fa fa-home"><!--test--></i>
+          </div></a>
+          <!--			        <div style="margin-top:2%;float:right;" ng-show="prevnedddddd" class="col-sm-7 col-xs-7">
+                                  <div style="margin-top:2%;float:right;"  class="col-sm-7 col-xs-7 ">
+            <div class="col-sm-6 col-xs-6 " style="cursor:pointer;" ng-click="prevclickbutton(2);" ><i style="font-size:25px;" class="fa fa-angle-left fa-2x"></i></div>
+           <div class="col-sm-6 col-xs-6 " style="cursor:pointer;" ng-click="nextcliekbutton(2);" ><i style="font-size:25px;" class="fa fa-angle-right fa-2x"></i></div>
+           </div>
+              </div>-->
+        </div>
+
+
+        <div style="padding:0px;background-color: #005f96;" class="col-sm-12 col-xs-12" id="leadlistallprevnext" >
+
+
+
+
+
+
+
+
+
+
+
+          <div class="col-sm-12 col-xs-12" style="margin-top: 2%;margin-bottom: 2%;text-align:center;color:#fff; ">
+            Booking Details
+
+
+          </div>
+
+
+          <div class="col-sm-12 col-xs-12" ng-show="bookinglistavaible" ng-if="bookinglist[0][0] !== null" style="padding:0px; ">
+            <div class="col-sm-12 col-xs-12" style="padding:0px;margin-top:2%;margin-bottom:2%; ">
+              <div class="col-sm-3 col-xs-3" style="margin-top:1%; ">
+
+                <div style="padding-top: 10px;padding-bottom: 10px;color:#fff;border: 1px solid #fff;text-align:center;" >{{booking.bookingId.bookingId}}</div>
+              </div>
+              <div class="col-sm-9 col-xs-9" style="margin-top:1%; ">
+
+                <div  style="padding-top: 10px;padding-bottom: 10px;color:#fff;text-align:center;" >{{book.myEvent.eventName}}</div>
+              </div>
+
+            </div>
+            <div class="col-sm-12 col-xs-12" style="padding:0px;margin-top:2%;margin-bottom:2%; ">
+              <div class="col-sm-6 col-xs-6" style="margin-top:1%; ">
+
+                <div style="padding-top: 10px;padding-bottom: 10px;color:#fff;border: 1px solid #fff;text-align:center;" >{{booking.eventDate| date:'MM/dd/yyyy'}}</div>
+              </div>
+              <div class="col-sm-6 col-xs-6" style="margin-top:1%; ">
+
+                <div  style="padding-top: 10px;padding-bottom: 10px;color:#fff;border: 1px solid #fff;text-align:center;" >{{booking.bookingId.paxCount}} Guests</div>
+              </div>
+
+            </div>
+
+            <!--	<div class="col-sm-12" style="padding:0px;margin-top:2%;margin-bottom:2%; ">
+                      <div class="col-sm-4" style=" ">
+
+                  <div  id="EventDate1" name="EventDate" style="margin-top: 10px;color:#fff;border: 1px solid #fff;text-align:center;">{{bookinglist[0][0]| date:'MM/dd/yyyy'}}</div>
+          </div>
+
+
+              <div class="col-sm-4" style=" ">
+          <div  id="EventDate" name="EventDate" style="margin-top: 10px;color:#fff;border: 1px solid #fff;text-align:center;">{{bookinglist[0][1]}}</div>
+              <!-<input value="{{bookinglist.bookingId.userMasterId.mobileNo}}" type="text" id="Mobile" name="Mobile" style="margin-top: 10px;" disabled="disabled" />->
+          </div>	<div class="col-sm-4" style="  ">
+          <div  id="EventDate" name="EventDate" style="margin-top: 10px;color:#fff;border: 1px solid #fff;text-align:center;">{{bookinglist[0][2]}}</div>
+              <!-<input value="{{bookinglist.bookingId.userMasterId.mobileNo}}" type="text" id="Mobile" name="Mobile" style="margin-top: 10px;" disabled="disabled" />->
+          </div>
+              </div> -->
+            <!--<div class="col-sm-12" style="padding:0px;margin-top:2%;margin-bottom:2%; ">
+                            <div class="col-sm-8" style="margin-top:1%; ">
+
+            <div id="BuyerName" name="BuyerName" style="padding-top: 10px;padding-bottom: 10px;color:#fff;border: 1px solid #fff;text-align:center;" >{{bookinglist[0][3]}}</div>
+        </div>
+                            <div class="col-sm-4" style="margin-top:1%; ">
+
+            <div  style="padding-top: 10px;padding-bottom: 10px;color:#fff;border: 1px solid #fff;text-align:center;" >{{bookinglist[0][4]}}</div>
+        </div>
+
+        </div> -->
+            <div class="col-sm-12 col-xs-12" style=" ">
+              <div class="col-sm-9 col-xs-9" style="padding:0px;    margin-top: 5%;border:1px solid #fff;color:#fff;">
+                <div style="padding-top:5px;padding-bottom:5px; " class="col-sm-12 col-xs-12" >{{booking.bookingId.userMasterId.username}}</div>
+                <div style="padding-top:5px;padding-bottom:5px; " class="col-sm-12 col-xs-12"  id="Email" name="Email">{{booking.bookingId.userMasterId.emailaddress}}</div>
+              </div>
+              <div class="col-sm-3 col-xs-3" style="margin-top: 5%;margin-bottom:2%;">
+                <div style="border:1px solid #005f96;padding:0px;color:#fff;padding-top:10px;padding-bottom:10px;text-align: center; " class="col-sm-12 col-xs-12"   >
+                  <div class="col-sm-12 col-xs-12" ng-click="phoneCall();" style="padding: 0px;">
+                    <!--   <a ng-href="tel: 09243422233"> <a  style="color:#fff;" href="tel:09243422233"><i style="font-size: 16px;" class="fa  fa-phone"></i>&nbsp;</a> -->
+                    <a  style="color:#fff;" href="tel:08039512951"><i class="fa fa-phone fa-3x"></i></a></div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="col-sm-12 col-xs-12" style="padding:0px;margin-top:2%;margin-bottom:2%; ">
+              <div class="col-sm-6 col-xs-6" style="margin-top:1%; ">
+
+                <div style="padding-top: 10px;padding-bottom: 10px;color:#fff;border: 1px solid #fff;text-align:center;" >{{booking.bookingId.bookingTotalPrice}}</div>
+              </div>
+              <div class="col-sm-6 col-xs-6" style="margin-top:1%; ">
+
+                <div  style="padding-top: 10px;padding-bottom: 10px;color:#fff;border: 1px solid #fff;text-align:center;" >{{book.bookingStatusId.bookingStatus}}</div>
+              </div>
+
+            </div>
+
+            <!--	<div class="col-sm-12" style="padding:0px;margin-top:2%;margin-bottom:2%; ">
+              <div class="col-sm-12" style="margin-top:1%; ">
+
+                  <div  id="Email" name="Email" style="padding-top: 10px;padding-bottom: 10px;color:#fff;border: 1px solid #fff;text-align:center;" >{{bookinglist[0][5]}}</div>
+          </div>
+          </div>
+                  <div class="col-sm-12" style="padding:0px;margin-top:2%;margin-bottom:2%; ">
+              <div class="col-sm-12" style="  ">
+
+                  <div  id="PackageName"  style="padding-top: 10px;padding-bottom: 10px;color:#fff;border: 1px solid #fff;text-align:center;" >
+                  {{bookinglist[0][6]}}
+                  </div>
+          </div>
+              </div>
+
+              <div class="col-sm-12" style="padding:0px;margin-top:2%;margin-bottom:2%;">
+              <div class="col-sm-12" style=" ">
+
+                  <div name="max"  style="padding-top: 10px;padding-bottom: 10px;color:#fff;border: 1px solid #fff;text-align:center;" ng-model="bookinglist.bookingId.publishedTotalPrice"  id="FullTotal" >
+
+
+
+
+
+               {{bookinglist[0][7]}}
+
+
+          </div>
+              <!-- Mrutyunjaya modified this Validation ->
+              </div>
+              </div>
+
+
+                  <div class="col-sm-12" style="padding:0px;margin-top:2%;margin-bottom:2%;">
+              <div class="col-sm-12" style=" ">
+
+                  <div name="max"  style="padding-top: 10px;padding-bottom: 10px;color:#fff;border: 1px solid #fff;text-align:center;" ng-model="bookinglist.bookingId.publishedTotalPrice"  id="FullTotal" >
+
+
+
+
+
+              {{bookinglist[0][8]}}
+          </div>
+              <!-- Mrutyunjaya modified this Validation ->
+              </div>
+              </div> -->
+
+
+
+
+
+
+
+          </div>
+          <!-- <div class="span12">
+                  <div id="additionalServiceId" class="span4"></div>
+                  <div id="count" class="span4"></div>
+                  <div id="additionalServiceTotal" class="span4"></div>
+              </div> -->
+
+          <input type="hidden" id="bookingId" name="bookingId"/>
+
+          <div style="margin-top:1%;margin-bottom:1%;color:#fff;" ng-if="bookinglist[0][9] === 2" class="col-sm-12 col-xs-12">
+
+            <div style="margin-top:1%;margin-bottom:1%;color:#fff;" class="col-sm-5 col-xs-5"><input ng-click="checkboxvalue()" value="" id="checkmybox" ng-model="checkboxModel.value1" name="checkmybox" type="checkbox">Read and Understood</div>
+          </div>
+          <div style="margin-top:1%;margin-bottom:1%;color:#fff;"  class="col-sm-12 col-xs-12"> <!-- ng-if="bookinglist[0][9] === 2"  ng-show="diplayhidebasedcheck" -->
+
+            <div style="margin-top:1%;margin-bottom:1%;color:#fff;text-align: center;"  class="col-sm-12 col-xs-12" ng-show="diplayhidebasedcheck" >
+              <div style="text-align: center;margin-top:1%;margin-bottom:1%;color:#fff;" class="col-sm-6 col-xs-6">
+                <button style="text-align: center;" ng-click="acceptreject(2);" type="submit" class=" k-button" >Accept	</button>
+              </div>
+
+              <div style="text-align: center;margin-top:1%;margin-bottom:1%;color:#fff;" class="col-sm-6 col-xs-6">
+                <button style="text-align: center;"  ng-click="acceptreject(3);"  type="submit" class=" k-button" >Reject</button>
+              </div>
+            </div>	<div style="margin-top:1%;margin-bottom:1%;color:#fff;" class="col-sm-12 col-xs-12">
+              <span id="timer" ng-model="timerprint" >{{timerprint}}	</span>
+            </div>
+          </div>
+          <div style="margin-top:1%;margin-bottom:1%;color:#fff;"   class="col-sm-12 col-xs-12">
+
+            {{bookinglist[0][11]}}
+          </div>
+
+
+
+
+        </div>
+        <div class="col-sm-12 col-xs-12" style="padding:0px;">
+          <input style="    background-color: #005F96 !important;padding: 0px;" name="reviewUploadFiles"
+                 type="file"
+                 kendo-upload
+                 k-async="{ saveUrl: '{{urlappend}}/review/saveImageForThisEvent;jsessionid={{jessionid}}?bookingId={{bookingId}}&host=mybanquetbox.com', removeUrl: 'remove', autoUpload: true ,  multiple: true }"
+                 k-select="onSelect"
+            />
+        </div>
+
+      </div>
+
+
+      </div>
+
+
+
+    </ion-content>
+</ion-view>

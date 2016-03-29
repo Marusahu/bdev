@@ -1,0 +1,36 @@
+<ion-view title="Bookings">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+
+
+        <a ui-sref="landingpage">  <div style="min-height:50px;background:#f1f1f1;padding-top:10px;padding-bottom:10px;text-align:center;" class="col-sm-4 col-xs-4">
+          <i style="font-size:25px;" class="fa fa-home"><!--test--></i>
+        </div></a>
+        <div style="margin-top:0%;float:right;padding: 0px;" ng-show="prevnedddddd" class="col-sm-8 col-xs-8">
+
+          <div  class="col-sm-12 col-xs-12">
+
+            <select style="margin-top: 2%;min-height:39px;" class="col-md-12 col-xs-12" name="mySelect" id="mySelect" ng-change="allbooklistcall();"
+                    ng-options="option.name for option in singleSelect.availableOptions track by option.id"
+                    ng-model="singleSelect.selectedOption"> </select>
+
+
+          </div>
+        </div>
+      </div>
+
+        <div  class="col-sm-12 col-xs-12" style="padding:0px;">
+
+          <table class= "table table-striped table-hover">
+            <th ng-repeat= "header in headers">
+              <a> {{headers[$index]}} </a>
+            </th>
+            <tr ng-repeat="listleadsdaystest in listleadsdays">
+              <td> <a ui-sref="bookingDetail({id: listleadsdaystest.bookingId})"> {{listleadsdaystest.bookingId}}</a> </td>
+              <td> <a ui-sref="bookingDetail({id: listleadsdaystest.bookingId})"> {{listleadsdaystest.eventDate}} </a></td>
+              <td> <a ui-sref="bookingDetail({id: listleadsdaystest.bookingId})"> {{listleadsdaystest.eventName}} </a></td>
+              <!--<td> <a ui-sref="booking({id: listleadsdaystest.bookingId})"> {{listleadsdaystest.pax}} </a></td>-->
+            </tr>
+          </table>
+          </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,179 @@
+<ion-view title="leadDetail">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="leadDetailCtrl" >
+      <div>
+        <div  ng-show="prevnedddddd"  style="margin-top:2%;float:right;"  class="col-sm-7 col-xs-7 ">
+          <div class="col-sm-6 col-xs-6 " style="font-size:1.2em;cursor:pointer;" ng-click="prevclickbutton(1);" >  <i style="font-size:25px;" class="fa fa-angle-left"><!--test--></i></div>
+          <div class="col-sm-6 col-xs-6 " style="font-size:1.2em;cursor:pointer;" ng-click="nextcliekbutton(1);" >  <i style="font-size:25px;" class="fa fa-angle-right"><!--test--></i></div>
+        </div>
+        <div  ng-show="prevneddddddnew"  style="margin-top:2%;float:right;"  class="col-sm-7 col-xs-7 ">
+          <div class="col-sm-6 col-xs-6 " style="font-size:1.2em;cursor:pointer;" ng-click="prevclickbuttonnew();" >  <i style="font-size:25px;" class="fa fa-angle-left"><!--test--></i></div>
+          <div class="col-sm-6 col-xs-6 " style="font-size:1.2em;cursor:pointer;" ng-click="nextcliekbuttonnew();" >  <i style="font-size:25px;" class="fa fa-angle-right"><!--test--></i></div>
+        </div>
+      </div>
+      </div>
+
+
+      <div style="padding:0px;margin-top:5%;" class="col-sm-12 col-xs-12" id="leadlistallprevnext" >
+
+        <div style="padding:0px;" class="col-sm-12 col-xs-12">
+
+          <input type="hidden" id="myEventId" value="{{eventid}}"/>
+
+          <div style="padding:0px;margin-bottom: 1%;background-color: #ccc;" class="col-sm-12 col-xs-12" >
+            <div style="padding:0px;background-color: #005f96;" class="col-sm-12 col-xs-12" ng-class="colorChange">
+
+              <div class="col-sm-12 col-xs-12" style="margin-top: 2%;color: #fff;text-align: right;" ng-model="displaystatus">{{displaystatus}}</div>
+              <div style="padding:0px;margin-top:3%;" class="col-sm-12 col-xs-12">
+                <div style="margin-top:2%;" class="col-sm-4 col-xs-4">
+                  <div style="border:1px solid #fff;color:#fff;padding-top:5px;padding-bottom:5px;" class="col-sm-12" ng-model="myEvent.myEventId"  id="eventId">{{myEvent.myEventId}}</div>
+                </div>
+                <div style="margin-top:2%;" class="col-sm-8 col-xs-8">
+                  <div style="color:#fff;padding-top:5px;padding-bottom:5px;" class="col-sm-12" ng-model="myEvent.eventName"  id="eventName">{{myEvent.eventName}}</div>
+                </div>
+
+              </div>
+
+
+              <div  style="padding:0px;margin-top:3%;" class="col-sm-12 col-xs-12">
+                <div style="margin-top:2%;" class="col-sm-6 col-xs-6">
+                  <div style="border:1px solid #fff;color:#fff;padding-top:5px;padding-bottom:5px; " class="col-sm-12" id="userName"  ng-model="myEvent.userMasterId.username" name="username" >{{myEvent.userMasterId.username}}</div>
+
+                </div>
+                <div style="margin-top:2%; " class="col-sm-6 col-xs-6">
+
+                  <div style="border:1px solid #fff;color:#fff;padding-top:5px;padding-bottom:5px;" class="col-sm-12 col-xs-12">
+
+
+                    <div  style="padding:0px;" class="col-sm-12" id="guestCount" ng-model="myEvent.guestCount"  name="guestCount" > {{myEvent.guestCount}} Guests</div>
+                    <input type="hidden" id="guestCount1" value="{{myEvent.guestCount}}" />
+                  </div>
+
+                </div>
+
+
+
+              </div>
+
+              <div  style="padding:0px;margin-top:3%;margin-bottom: 2%;" class="col-sm-12 col-xs-12">
+                <div style="margin-top:2%;" class="col-sm-6 col-xs-6">
+
+                  <div style="border:1px solid #fff;color:#fff;padding-top:5px;padding-bottom:5px; " class="col-sm-12" ng-model="myEvent.eventEndDate" id="eventDate" value="{{myEvent.eventEndDate}}"  >{{myEvent.eventEndDate}}</div>
+
+                </div>
+
+                <div style="margin-top:2%; " class="col-sm-6 col-xs-6">
+
+                  <div style="border:1px solid #fff;color:#fff;padding-top:5px;padding-bottom:5px;min-height: 32px;" class="col-sm-12 col-xs-12">
+
+
+                    <div  style="padding:0px;" class="col-sm-12" id="sessiondisplay" ng-model="sessiondisplay"  name="Session" >  {{sessiondisplay}}</div>
+                  </div>
+
+                </div></div>
+
+
+
+            </div>
+
+
+
+            <div style="padding:0px;background-color: #ccc;margin-top: 2%;" class="col-sm-12 col-xs-12">
+              <label style="font-size: .9em;margin-bottom: 0px;padding-left: 2%;">Quick Actions</label>
+              <div class="col-sm-12 col-xs-12" style=" ">
+                <div class="col-sm-9 col-xs-9" style="padding:0px;    margin-top: 2%;color:#444;border-left: 1px solid #444;">
+                  <div style="padding-top:5px;padding-bottom:5px; " class="col-sm-12" ng-model="myEvent.userMasterId.emailaddress"  id="userEmailAddress"  name="userEmailAddress"  >Mail to: {{myEvent.userMasterId.emailaddress}}</div>
+                </div>
+                <div class="col-sm-3 col-xs-3" style="padding: 0px;margin-top: 2%;margin-bottom:2%;border:1px solid #444;text-align: center;">
+                  <div style="padding: 0px;padding-top:10px;padding-bottom:10px; " class="col-sm-12 col-xs-12"   >
+                    <div class="col-sm-12 col-xs-12" style="padding: 0px;"  ng-click="phoneCall(myEvent.myEventId);">
+                      <!--   <a ng-href="tel: 09243422233"> <a  style="color:#fff;" href="tel:09243422233"><i style="font-size: 16px;" class="fa  fa-phone"></i>&nbsp;</a> -->
+                      <a  style="color:#444;" href="tel:08039512951"><i style="font-size: 32px;" class="fa fa-3x fa-phone"></i></a>
+                      <!--<a ng-href="tel: 09243422233">make fon call</a> -->
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-sm-12 col-xs-12">
+                <a ng-click="sendbrochureformyevent();" class="button button-block icon-right ion-chevron-right " style="text-align: left;background-color: #bbb;color: #333;">Send Availability</a></div>
+
+              <div class="col-sm-12 col-xs-12"><a ng-click="sendbrochureformyevent();" class="button button-block icon-right ion-chevron-right " style="text-align: left;background-color: #bbb;color: #333;">Send Quote </a></div>
+
+              <div class="col-sm-12 col-xs-12"><a  ng-click="expireMyShortlist();" class="button button-block icon-right ion-chevron-right " style="text-align: left;background-color: #bbb;color: #c33;border: 1px solid #c33;">Send Regret</a></div>
+            </div>
+
+
+
+            <!--<div class="col-sm-12 col-xs-12"  style="    font-weight: 600;background-color: #ccc;    padding: 8px 10px;">Send Quotes  <i style="float: right;font-size: 18px;" class="fa fa-chevron-circle-down"></i></div>-->
+            <div class="col-sm-12 col-xs-12" style="display: none;">
+              <div class="col-sm-12 col-xs-12" style="color: #000;padding: 0px;padding-top: 5px;padding-bottom: 5px;"   ng-repeat="xx in leadmsforprop" >
+                <div class="col-sm-12 col-xs-12" style="width: auto;border: 1px solid #888;min-width: 220px;" id="addMasterServiceAsShortlist'+{{$index}}+'" ng-click="addServiceToMyShortlist(xx.vspkgServicesId , myEvent.myEventId)" >
+                  <div id="showPropertyShortlistBlockId'+{{$index}}+'" style="padding: 5px 0px;">
+                    <input type="hidden" id="propertyMasterServiceId'+{{$index}}+'" value="{{xx.vspkgServicesId}}"/>
+                    <div class="col-sm-4 col-xs-4" style=" padding: 0px ;width: auto;padding: 0px 10px 0px 5px;">Send Quote </div>
+                    <div class="col-sm-3 col-xs-3" id="priceType'+{{$index}}+'" style="width: auto;font-weight: 500; min-width: 50px;">
+                      <div style="padding: 0px;width: auto;" class="col-sm-12 col-xs-12" ng-if="xx.vspkgPricingMethodologyId.vspkgPricingMethodologyId == 2 || xx.vspkgPricingMethodologyId.vspkgPricingMethodologyId == 3">
+                        <!--{{xx.vspkgPricingMethodologyId.pricingMethodology }} : --> <i class="fa fa-inr"><!--d--></i>  {{xx.publishedPrice}}
+                      </div>
+                      <div style="padding: 0px;width: auto;" class="col-sm-12 col-xs-12" ng-if="xx.vspkgPricingMethodologyId.vspkgPricingMethodologyId == 4">
+                        <!--{{xx.vspkgPricingMethodologyId.pricingMethodology}} :  --><i class="fa fa-inr"><!--d--></i>  {{xx.publishedTotal}}
+                      </div>
+                    </div>
+                    <!--<div class="col-sm-5 col-xs-4" id="showmyShortlistBlockHotel'+{{$index}}+'" style=" padding: 0px 5px;  font-weight: 500; text-align: left;text-overflow: ellipsis;overflow: hidden;  white-space: nowrap;min-width: 210px;">  {{xx.vspkgServicesTitle}}</div>-->
+                    <i class="fa fa-angle-right " style="    font-size: 22px;"><!--d--></i><br/>
+                    <!--onclick="addServiceToMyShortlist('xx.vspkgServicesId','+eventId+')" -->
+                  </div></div>
+
+              </div></div>
+            <div class="col-sm-12 col-xs-12" style="padding: 0px 15px;    margin-bottom: 2%;">
+
+
+            </div>
+
+          </div>
+          <div style="padding:0px;background:#fff;margin-top:1%;border: 1px solid #999;display: none;" class="col-sm-12 col-xs-12">
+            <div class="col-sm-12 col-xs-12"  ng-click="toggleHistory()" style="    font-weight: 600;background-color: #fff;    padding: 8px 10px;">
+              <i  class="fa fa-clock-o"></i> History <i style="float: right;font-size: 18px;" class="fa fa-chevron-circle-down"></i></div>
+            <div style="padding:0px;background-color: #fff; " class="animate-repeat col-sm-12 col-xs-12" ng-if="myServiceShortlist[0] !== null" ng-repeat="myServiceShortlist in myServiceShortlist" ng-hide="history">
+
+              <div class="col-sm-12 col-xs-12" style="padding:0px;" ng-hide="showmyShortlistBlockId{{myServiceShortlist[0]}}" id="showmyShortlistBlockId{{myServiceShortlist[0]}}" >
+                <div class="col-sm-12"	style="padding:0px;">
+                  <div style="padding-top:10px;padding-bottom:10px;" class="showmyShortlistBlockService col-sm-8">{{myServiceShortlist[12]}}</div>
+                  <div style="padding-top:10px;padding-bottom:10px;" class="showmyShortlistBlockHotel col-sm-4">{{myServiceShortlist[9]}}</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-xs-12" style="padding: 0px;background-color: #f1f1f1;margin-top: 1%;">
+            <div class="col-sm-12 col-xs-12" style="margin-top:2%;margin-bottom: 1%;padding: 0px;">
+              <div ng-click="clickvenuevisit()" class="col-sm-6 col-xs-6" style="padding-left: 0px;"><button class="col-sm-12 col-xs-12 btn btn-primary btn-md">Venue Visit</button></div>
+              <div class="col-sm-6 col-xs-6" ng-click="expirelead()" style="padding-right: 0px;"><button class="col-sm-12 col-xs-12 btn btn-primary btn-md">Expire</button></div>
+            </div>
+            <div class="col-sm-12 col-xs-12" style="margin-top:1%;margin-bottom: 1%;padding: 0px;">
+              <!-- <div class="col-sm-6 col-xs-6" style="padding-left: 0px;"><button class="col-sm-12 col-xs-12 btn btn-primary btn-md disabled">Book Online</button></div>-->
+              <div class="col-sm-12 col-xs-12" style="padding: 0px;" ng-click="dataForBooking(23)"><button class=" col-sm-12 col-xs-12 btn btn-primary btn-md">Book Now</button></div>
+            </div>
+            <div class="col-sm-12 col-xs-12" style="margin-top:1%;margin-bottom: 1%;padding: 0px;">
+              <div class="col-sm-12 col-xs-12" style="padding: 0px;">
+                <button class="col-sm-12 col-xs-12 btn btn-primary btn-md">
+                  <div class="col-sm-6 col-xs-6" style="text-align: left;">
+                    <select  name="myActivityDrop" style="margin-left:0px;width: 220px;" id="myActivityDrop" class=" dropDownList selectBoxStyle col-sm-12 col-xs-12" ><!--  test--></select>
+                  </div>
+                  <div class="col-sm-6 col-xs-6" style="">
+                    <input id="scheduledatepicker" name="scheduledatepicker" class="col-sm-12 col-xs-12"  placeholder="Schedule a visit"  style="width: 100%;"  kendo-date-picker  k-ng-model="dateObject"   /></div>
+
+                </button>
+              </div>
+            </div>
+
+          </div></div>
+
+      </div>
+      </div>
+
+
+    </ion-content>
+
+</ion-view>
