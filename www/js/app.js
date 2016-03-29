@@ -18,6 +18,8 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
     initPushwoosh();
   });
 })
+

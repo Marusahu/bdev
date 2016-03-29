@@ -1,5 +1,5 @@
 angular.module('app.controllers', ['ui.router'])
-  //Sahu commit 29mar
+
 
 .controller('loginCtrl', function($scope,$http,$state,$rootScope) {
 
@@ -7,8 +7,9 @@ angular.module('app.controllers', ['ui.router'])
 
         $state.go('home', { url: '/home'});
       }
-     // $rootScope.urlappend = "https://mybanquetbox.com";
-    $rootScope.urlappend = "http://192.168.40.73:8666/avenues";
+
+      $rootScope.urlappend = "https://mybanquetbox.com";
+
 
       $scope.useremail = "";
       $scope.userpwd = "";
@@ -20,10 +21,15 @@ angular.module('app.controllers', ['ui.router'])
             method: "GET",
             url:$rootScope.urlappend+'/applogin/login',
             params: {
+
              email :$scope.useremail,
              password :$scope.userpwd
              // email :"dorothy@ginserv.in",
             //  password :"ginserv"
+
+         //     email :$scope.useremail,
+           //   password :$scope.userpwd
+
 
             }
 
@@ -32,6 +38,7 @@ angular.module('app.controllers', ['ui.router'])
 
               $rootScope.jessionid = data.JSESSIONID;
               $rootScope.hotelid = data.eanHotelId;
+
               $rootScope.userMasterId = data.userMasterId;
               //alert($rootScope.userMasterId);
               var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
@@ -43,6 +50,7 @@ angular.module('app.controllers', ['ui.router'])
                   console.warn('setTags failed');
                 }
               );
+
 
               console.log(data.eanHotelId);
 

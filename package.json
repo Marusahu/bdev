@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "banquetbox",
   "version": "1.1.1",
   "description": "Banquetbox: An Ionic project",
+=======
+  "name": "%5Bbanquetbox%5D",
+  "version": "1.1.1",
+  "description": "[Banquetbox]: An Ionic project",
+>>>>>>> 73de223451920b5f95babdc33ad8c451fccd0516
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -20,8 +26,12 @@
     "cordova-plugin-whitelist",
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
+<<<<<<< HEAD
     "ionic-plugin-keyboard",
     "pushwoosh-cordova-plugin"
+=======
+    "ionic-plugin-keyboard"
+>>>>>>> 73de223451920b5f95babdc33ad8c451fccd0516
   ],
   "cordovaPlatforms": [
     "android"
