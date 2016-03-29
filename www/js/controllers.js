@@ -1,6 +1,5 @@
 angular.module('app.controllers', ['ui.router'])
-
-
+  //Sahu commit 29mar
 
 .controller('loginCtrl', function($scope,$http,$state,$rootScope) {
 
