@@ -1,0 +1,40 @@
+<ion-view title="Leads">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+      <div style="padding: 0px;margin-top:0%;float:right;" ng-show="prevnedddddd" class="col-sm-8 col-xs-8" ng-controller="leadsCtrl" >
+        <div  class="col-sm-12 col-xs-12">
+
+          <select style="margin-top: 2%;min-height:39px;" class="col-md-12 col-xs-12" name="mySelect" id="mySelect" ng-change="leadsfordays();"
+                  ng-options="option.name for option in singleSelect.availableOptions track by option.id"
+                  ng-model="singleSelect.selectedOption"> </select>
+        </div>
+      </div>
+        <div  class="col-sm-12 col-xs-12" style="padding:0px;">
+
+          <table class= "row header">
+            <th ng-repeat= "header in headers" >
+              <a> {{headers[$index]}} </a>
+            </th>
+            <tr  ng-repeat="listleadsdays in listleadsdays"  >
+              <td ng-if="listleadsdays.myEventStageName == 'Unattended' "> <a style="color:#c33 !important;text-decoration: none !important;" ui-sref="leadDetail({id: listleadsdays.myEventId,index :$index+1})"> {{listleadsdays.myEventId}}</a> </td>
+              <td ng-if="listleadsdays.myEventStageName != 'Unattended' "> <a style="color:#005f96 !important;text-decoration: none !important;" ui-sref="leadDetail({id: listleadsdays.myEventId,index :$index+1})"> {{listleadsdays.myEventId}}</a> </td>
+              <!-- <td> <a style="text-decoration: none !important;color: inherit;" ui-sref="leads({id: listleadsdays.myEventId})"> {{listleadsdays.auditCreatedDtTime}} </a></td>-->
+              <td ng-if="listleadsdays.myEventStageName == 'Unattended' "> <a style="color:#c33 !important;;text-decoration: none !important;" ui-sref="leadDetail({id: listleadsdays.myEventId,index :$index+1})"> {{listleadsdays.eventName}} </a></td>
+              <td ng-if="listleadsdays.myEventStageName != 'Unattended' "> <a style="color:#005f96 !important;;text-decoration: none !important;" ui-sref="leadDetail({id: listleadsdays.myEventId,index :$index+1})"> {{listleadsdays.eventName}} </a></td>
+              <td ng-if="listleadsdays.myEventStageName == 'Unattended' "> <a style="color:#c33 !important;;text-decoration: none !important;" ui-sref="leadDetail({id: listleadsdays.myEventId,index :$index+1})"> {{listleadsdays.paxcount}} </a></td>
+              <td ng-if="listleadsdays.myEventStageName != 'Unattended' "> <a style="color:#005f96 !important;;text-decoration: none !important;" ui-sref="leadDetail({id: listleadsdays.myEventId,index :$index+1})"> {{listleadsdays.paxcount}} </a></td>
+            </tr>
+          </table>
+
+          <!--
+//Sample table. Creating a table without using html table
+          <div class="row header" class="bar-stable">
+            <div class="col">Utility Company Name</div>
+            <div class="col">Service Code</div>
+            <div class="col">Pay Limit</div>
+            <div class="col">Account Number to Use</div>
+            <div class="col"></div>
+          </div>-->
+
+        </div>
+    </ion-content>
+</ion-view>

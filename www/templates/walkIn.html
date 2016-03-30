@@ -1,0 +1,66 @@
+<ion-view title="Walk-In">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+      <div  class="col-sm-12 col-xs-12">
+
+        <div style="margin-top:2%;border:1px solid #ccc;padding:0px;" class="col-sm-12 col-xs-12">
+          <a ui-sref="landingpage">  <div style="margin-left:5px;margin-bottom:5px;margin-top:5px;min-height:50px;background:#f1f1f1;padding-top:10px;padding-bottom:10px;text-align:center;" class="col-sm-4 col-xs-4">
+            <i style="font-size:25px;" class="fa fa-home"><!--test--></i>
+          </div></a>
+
+        </div>
+        <form name="walkinbuyer">
+          <div  class="col-sm-12 col-xs-12" style="padding:0px;margin-bottom: 2%;background-color: #c33;">
+            <div  class="col-sm-12 col-xs-12" style="margin-bottom: 2%;margin-top: 2%;">
+
+              <div ng-model="myEventId" id="ventid" ng-show="ventid" class="col-sm-4 col-xs-4" style="border:1px solid #fff;border-radius: 3px;padding: 10px;color: #fff;text-align: center;float: right;">{{myEvent.myEventId}}</div>
+            </div>
+            <input ng-model="myEvent.userMasterId.userMasterId" class="col-sm-8 col-xs-12" type="hidden" value="{{myEvent.userMasterId.userMasterId}}" />
+            <div  class="col-sm-12 col-xs-12" style="padding: 10px 15px;">
+              <div  class="col-sm-4 col-xs-12" style="padding: 0px;color: #fff;text-align: left;">Event Name *</div>
+              <input id="eventname" ng-model="eventname" class="col-sm-8 col-xs-12" type="text" value="{{eventname}}"   required />
+            </div>
+            <div  class="col-sm-12 col-xs-12" style="padding: 10px 15px;">
+              <div  class="col-sm-4 col-xs-12" style="    padding: 0px;color: #fff;text-align: left;">Event Date *</div>
+              <input id="eventDate" class="col-sm-8 col-xs-12" type="text" value="{{eventdate | date:'MM/dd/yyyy'}}" style="width: 100%;" ng-model="eventdate" kendo-date-picker  k-ng-model="dateObject"  required />
+              <!-- placeholder="{{myEvent.eventEndDate | date:'MM/dd/yyyy'}}"-->
+              <!--<input id="ventdate"  class="col-sm-8 col-xs-8"  value="{{editleads[0][3] | date:'MM/dd/yyyy'}}" />-->
+              <!--  value="{{editleads[0][3] | date:'yyyy/dd/mm'}}"  -->
+            </div>
+            <div  class="col-sm-12 col-xs-12" style="padding: 10px 15px;">
+              <div  class="col-sm-4 col-xs-12" style="padding: 0px;color: #fff;text-align: left;">Guest Count *</div>
+              <input id="eventcount" ng-model="eventcount"  class="col-sm-8 col-xs-12" type="number" value="{{eventcount}}"  required />
+            </div>
+            <div  class="col-sm-12 col-xs-12" style="padding: 10px 15px;">
+              <div  class="col-sm-4 col-xs-12" style="padding: 0px;color: #fff;text-align: left;">Buyer Name *</div>
+              <input id="eventuser" ng-model="eventusername"  class="col-sm-8 col-xs-12" type="text" value="{{eventusername}}"  required />
+            </div>
+
+            <div  class="col-sm-12 col-xs-12" style="padding: 10px 15px;">
+              <div  class="col-sm-4 col-xs-12" style="padding: 0px;color: #fff;text-align: left;">Buyer E-mail *</div>
+              <input id="eventemail" ng-model="eventemailaddress"  class="col-sm-8 col-xs-12" type="email" value="{{eventemailaddress}}" required />
+              <!-- <p style="text-align: right;color: #fff;font-size: .9em;">Email-id is incorrect</p>-->
+              <!--<input class=" k-textbox"  style="padding:0px;margin-left:0px;width:100%;" id="userEmailAddress"  name="userEmailAddress"   type="text" />-->
+            </div>
+            <div  class="col-sm-12 col-xs-12" style="padding: 10px 15px;">
+              <div  class="col-sm-4 col-xs-12" style="padding: 0px;color: #fff;text-align: left;">Buyer Contact *</div>
+              <input id="eventmobile" ng-model="eventmobileno" ng-pattern="/^[0-9]{1,7}$/"  name="mobileno"  class="col-sm-8 col-xs-12" type="number" value="{{eventmobileno}}" required />
+              <!-- <p style="text-align: right;color: #fff;font-size: .9em;">Mobile number is incorrect </p> -->
+            </div>
+            <div  class="col-sm-12 col-xs-12" style="padding: 10px 15px;">
+              <div  class="col-sm-4 col-xs-12" style="padding: 0px;color: #fff;text-align: left;">Session *</div>
+              <div id="sessioncreatebtn" class="btn-group col-sm-8 col-xs-12" style="padding: 0px;">
+                <button ng-click="sessioncreatebtn(1)" id="1" class="btn btn-default col-sm-4 col-xs-4">Morning </button>
+                <button ng-click="sessioncreatebtn(2)" id="2" class="btn btn-default col-sm-4 col-xs-4">Evening</button>
+                <button ng-click="sessioncreatebtn(3)" id="3" class="btn btn-default col-sm-4 col-xs-4">Full-day</button>
+              </div>
+            </div>
+            <div  class="col-sm-12 col-xs-12" style="padding: 10px 15px;">
+              <button   ng-click="savenewlead()" class="btn btn-md"  style="float: right;" >Save</button>
+              <!--ng-hide ="!myEvent.eventName.length || !myEvent.eventEndDate.length || !myEvent.userMasterId.username.length ||  !myEvent.userMasterId.emailamyEvent.userMasterId.mobileNo.length "-->
+            </div>
+
+          </div></form>
+      </div>
+
+    </ion-content>
+</ion-view>
